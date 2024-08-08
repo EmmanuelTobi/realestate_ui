@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:realestate_ui/utils/colors.dart';
 
 class AnimatingText extends StatefulWidget {
@@ -70,9 +71,9 @@ class _AnimatingTextState extends State<AnimatingText> with TickerProviderStateM
         return Text(
           score,
           style: TextStyle(
-              fontSize: 32,
-              color: widget.textColor ?? secondaryColor,
-              fontWeight: FontWeight.w900,
+            fontSize: 32,
+            color: widget.textColor ?? secondaryColor,
+            fontWeight: FontWeight.w700,
           ),
         );
       },
