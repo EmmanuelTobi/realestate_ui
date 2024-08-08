@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:realestate_ui/ui/home/home_screen.dart';
 import 'package:realestate_ui/ui/search/search_screen_view.dart';
+import 'package:realestate_ui/utils/colors.dart';
 import 'package:realestate_ui/views/bottom_nav_bar.dart';
 
 class HomeTabView extends StatefulWidget {
@@ -19,12 +20,30 @@ class _HomeTabViewState extends State<HomeTabView> {
       extendBody: true,
       body: IndexedStack(
         index: initialIndex,
-        children: [
-          const SearchScreen(),
-          Container(),
-          const HomeScreen(),
-          Container(),
-          Container(),
+        children: const [
+          SearchScreen(),
+          Center(
+            child: Text('Coming soooonn.....', style: TextStyle(
+                fontSize: 11,
+                fontWeight: FontWeight.w600,
+                color: secondaryColor
+            ),),
+          ),
+          HomeScreen(),
+          Center(
+            child: Text('Coming soooonn.....', style: TextStyle(
+                fontSize: 11,
+                fontWeight: FontWeight.w600,
+                color: secondaryColor
+            ),),
+          ),
+          Center(
+            child: Text('Coming soooonn.....', style: TextStyle(
+                fontSize: 11,
+                fontWeight: FontWeight.w600,
+                color: secondaryColor
+            ),),
+          ),
         ],
       ),
       bottomNavigationBar: BottomNavBarView(
