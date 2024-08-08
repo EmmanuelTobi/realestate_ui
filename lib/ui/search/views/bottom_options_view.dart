@@ -1,11 +1,16 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_context_menu/flutter_context_menu.dart';
 
 class SearchBottomOptionsView extends StatelessWidget {
-  SearchBottomOptionsView({super.key});
+  SearchBottomOptionsView({
+    super.key,
+    this.onWithoutLayerAction
+  });
 
   final GlobalKey _key = GlobalKey();
+  final Function? onWithoutLayerAction;
 
   @override
   Widget build(BuildContext context) {
@@ -22,11 +27,13 @@ class SearchBottomOptionsView extends StatelessWidget {
               ),
             ),
             const SizedBox(
-              height: 8,
+              height: 10,
             ),
             InkWell(
               onTap: () {
-                //showMenuWithPosition(_key);
+                showMenuWithPosition(_key,
+                  onWithoutLayerAction: () => onWithoutLayerAction!()
+                );
               },
               child: IconsCircle(
                 key: _key,
@@ -107,3 +114,49 @@ class IconsCircle extends StatelessWidget {
     );
   }
 }
+
+void showMenuWithPosition(GlobalKey key, {Function? onWithoutLayerAction}) {
+  RenderBox? box = key.currentContext?.findRenderObject() as RenderBox?;
+  Offset? position = box?.localToGlobal(Offset.zero);
+  double y = position?.dy ?? 0;
+  double x = position?.dx ?? 0;
+
+  int yOffset = -170;
+  y = y + yOffset;
+
+  final contextMenu = ContextMenu(
+      entries: <ContextMenuEntry>[
+        MenuItem(
+          label: 'Cosy Areas',
+          icon: Icons.home,
+          onSelected: () {
+
+          },
+        ),
+        MenuItem(
+          label: 'Price',
+          icon: Icons.wallet,
+          onSelected: () {
+
+          },
+        ),
+        MenuItem(
+          label: 'Infrastructure',
+          icon: Icons.shopping_basket_outlined,
+          onSelected: () {
+
+          },
+        ),
+        MenuItem(
+          label: 'Without any layers',
+          icon: Icons.layers,
+          onSelected: () => onWithoutLayerAction!(),
+        ),
+      ],
+      position: Offset(x, y),
+      padding: const EdgeInsets.all(18.0),
+      borderRadius: BorderRadius.circular(20));
+
+  showContextMenu(key.currentContext!, contextMenu: contextMenu);
+}
+

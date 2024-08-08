@@ -12,6 +12,9 @@ class SearchScreen extends StatefulWidget {
 }
 
 class _SearchScreenState extends State<SearchScreen> {
+
+  var showNumbers = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,7 +31,9 @@ class _SearchScreenState extends State<SearchScreen> {
         ),
         child: Stack(
           children: [
-            ...mapPinsRandom(showNumbers: false),
+            ...mapPinsRandom(
+                showNumbers: showNumbers
+            ),
             Positioned(
               top: 60,
               left: 40,
@@ -43,7 +48,7 @@ class _SearchScreenState extends State<SearchScreen> {
                       ),
                       child: TextField(
                         controller: TextEditingController(),
-                        onChanged: (s){
+                        onChanged: (s) {
 
                         },
                         decoration: const InputDecoration(
@@ -74,7 +79,21 @@ class _SearchScreenState extends State<SearchScreen> {
               bottom: kBottomNavigationBarHeight + 60,
               left: 40,
               right: 40,
-              child: SearchBottomOptionsView(),
+              child: SearchBottomOptionsView(
+                onWithoutLayerAction: (){
+
+                  setState(() {
+
+                    if(showNumbers == true) {
+                      showNumbers = false;
+                    } else {
+                      showNumbers = true;
+                    }
+
+                  });
+
+                },
+              ),
             )
           ],
         ),
