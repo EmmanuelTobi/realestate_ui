@@ -6,21 +6,37 @@ import 'package:realestate_ui/utils/colors.dart';
 List<Align> mapPinsRandom({bool? showNumbers}) {
   List<Align> pins = [];
 
-  for (int i = 0; i < 8; i++) {
-    Random random = Random.secure();
+  pins.addAll([
 
-    final x = random.nextDouble() * (random.nextDouble() == 0 ? -1 : 2);
-    final y = random.nextDouble() * (random.nextDouble() == 0 ? -1 : 7);
-
-    final pin = Align(
-      alignment: Alignment(
-          x, y
+    Align(
+      alignment: const Alignment(
+          0.434, 0.3
       ),
       child: SetPins(showNumbers: showNumbers,),
-    );
+    ),
 
-    pins.add(pin);
-  }
+    Align(
+      alignment: const Alignment(
+          -0.7, -0.4
+      ),
+      child: SetPins(showNumbers: showNumbers,),
+    ),
+
+    Align(
+      alignment: const Alignment(
+          -0.5, -0.2
+      ),
+      child: SetPins(showNumbers: showNumbers,),
+    ),
+
+    Align(
+      alignment: const Alignment(
+          0.8, 0.1
+      ),
+      child: SetPins(showNumbers: showNumbers,),
+    ),
+
+  ]);
 
   return pins;
 }
@@ -38,7 +54,7 @@ class SetPins extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 50,
-      width: showNumbers! == true ? null : 50,
+      width: showNumbers! == true ? 90 : 50,
       decoration: const BoxDecoration(
         color: primaryColor,
         borderRadius: BorderRadius.only(
@@ -47,10 +63,10 @@ class SetPins extends StatelessWidget {
             topRight: Radius.circular(8)),
       ),
       child: Center(
-        child: showNumbers! ? const Icon(
+        child: showNumbers! != true ? const Icon(
           Icons.home_work_outlined,
           color: Colors.white,
-        ) : const Text('11.45mmP'),
+        ) : const Text('11,45 mmp'),
       ),
     );
   }

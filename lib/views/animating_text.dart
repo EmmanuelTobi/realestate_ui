@@ -72,7 +72,7 @@ class _AnimatingTextState extends State<AnimatingText> with TickerProviderStateM
           style: TextStyle(
               fontSize: 32,
               color: widget.textColor ?? secondaryColor,
-              fontWeight: FontWeight.w700
+              fontWeight: FontWeight.w900,
           ),
         );
       },

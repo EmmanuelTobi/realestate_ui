@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:realestate_ui/ui/home/home_screen.dart';
+import 'package:realestate_ui/ui/search/search_screen_view.dart';
 import 'package:realestate_ui/views/bottom_nav_bar.dart';
 
 class HomeTabView extends StatefulWidget {
@@ -19,7 +20,7 @@ class _HomeTabViewState extends State<HomeTabView> {
       body: IndexedStack(
         index: initialIndex,
         children: [
-          Container(),
+          const SearchScreen(),
           Container(),
           const HomeScreen(),
           Container(),

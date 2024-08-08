@@ -1,6 +1,6 @@
 extension Images on String {
   String toPNG() {
-    return 'assets/images/png/$this.png';
+    return 'assets/images/$this.png';
   }
 
   String toSVG() {
