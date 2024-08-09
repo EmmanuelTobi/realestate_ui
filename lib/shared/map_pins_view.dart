@@ -66,7 +66,7 @@ class SetPins extends StatelessWidget {
   Widget build(BuildContext context) {
     return AnimatedContainer(
       duration: const Duration(milliseconds: 800),
-      height: 50,
+      height: 40,
       width: showNumbers! == true ? 40 : 80,
       decoration: const BoxDecoration(
         color: primaryColor,
@@ -83,7 +83,7 @@ class SetPins extends StatelessWidget {
           padding: EdgeInsets.all(2.0),
           child: Text('11,45 mmp', style: TextStyle(
               fontSize: 11,
-              fontWeight: FontWeight.w600,
+              fontWeight: FontWeight.w400,
               color: Colors.white
           ),),
         ),
