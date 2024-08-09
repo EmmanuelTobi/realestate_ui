@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:realestate_ui/utils/colors.dart';
+import 'package:realestate_ui/shared/utils/colors.dart';
 
 class AnimatingText extends StatefulWidget {
   const AnimatingText({
@@ -21,6 +21,8 @@ class _AnimatingTextState extends State<AnimatingText> with TickerProviderStateM
   late AnimationController scoreProgressController;
   late Animation<double> scoreProgressAnimation;
 
+  int fontSizeUpdate = 24;
+
   @override
   void initState() {
 
@@ -34,6 +36,7 @@ class _AnimatingTextState extends State<AnimatingText> with TickerProviderStateM
     scoreProgressController.addStatusListener((status) {
       if (status == AnimationStatus.completed) {
         //////anything
+        fontSizeUpdate = 33;
       }
     });
 
@@ -70,8 +73,9 @@ class _AnimatingTextState extends State<AnimatingText> with TickerProviderStateM
 
         return Text(
           score,
+          maxLines: 3,
           style: TextStyle(
-            fontSize: 32,
+            fontSize: fontSizeUpdate.toDouble(),
             color: widget.textColor ?? secondaryColor,
             fontWeight: FontWeight.w700,
           ),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:realestate_ui/shared/utils/colors.dart';
 
-import '../utils/colors.dart';
 
 const _icons = [
   Icon(

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:realestate_ui/ui/home_tab/home_tab_view.dart';
+import 'package:realestate_ui/screens/home_tab/home_tab_view.dart';
 
 void main() {
   runApp(const MyApp());

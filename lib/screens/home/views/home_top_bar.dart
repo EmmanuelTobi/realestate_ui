@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:realestate_ui/shared/utils/colors.dart';
 
-import '../../../utils/colors.dart';
 
 class HomeTopBar extends StatelessWidget {
   const HomeTopBar({super.key});

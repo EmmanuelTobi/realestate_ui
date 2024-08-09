@@ -1,13 +1,35 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:realestate_ui/utils/colors.dart';
-import 'package:realestate_ui/views/animating_text.dart';
+import 'package:realestate_ui/shared/animating_text.dart';
+import 'package:realestate_ui/shared/utils/colors.dart';
 
-class BuyRentView extends StatelessWidget {
+class BuyRentView extends StatefulWidget {
   const BuyRentView({
     super.key,
   });
+
+  @override
+  State<BuyRentView> createState() => _BuyRentViewState();
+}
+
+class _BuyRentViewState extends State<BuyRentView> {
+
+  int currentContainerViewHeight = 150;
+
+  @override
+  void initState() {
+
+    Future.delayed(const Duration(seconds: 1) , (){
+
+      setState(() {
+        currentContainerViewHeight = 200;
+      });
+
+    });
+
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -16,9 +38,11 @@ class BuyRentView extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Container(
-            width: MediaQuery.of(context).size.width/2 - 20,
-            height: 200,
+          AnimatedContainer(
+            width: currentContainerViewHeight > 100 ? MediaQuery.of(context).size.width/2 - 20 : 120,
+            height: currentContainerViewHeight.toDouble() - 10,
+            duration: const Duration(seconds: 1),
+            curve: Curves.fastOutSlowIn,
             padding: const EdgeInsets.all(12),
             decoration: const BoxDecoration(
               shape: BoxShape.circle,
@@ -50,9 +74,11 @@ class BuyRentView extends StatelessWidget {
               ),
             ),
           ),
-          Container(
-            width: MediaQuery.of(context).size.width/2 - 20,
-            height: 190,
+          AnimatedContainer(
+            width: currentContainerViewHeight > 100 ? MediaQuery.of(context).size.width/2 - 20 : 120,
+            height: currentContainerViewHeight.toDouble() - 10,
+            duration: const Duration(seconds: 1),
+            curve: Curves.fastOutSlowIn,
             padding: const EdgeInsets.all(12),
             clipBehavior: Clip.antiAlias,
             decoration: BoxDecoration(

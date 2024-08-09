@@ -1,7 +1,5 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
-import 'package:realestate_ui/utils/colors.dart';
+import 'package:realestate_ui/shared/utils/colors.dart';
 
 List<Align> mapPinsRandom({bool? showNumbers}) {
   List<Align> pins = [];

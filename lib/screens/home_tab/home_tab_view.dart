@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:realestate_ui/ui/home/home_screen.dart';
-import 'package:realestate_ui/ui/search/search_screen_view.dart';
-import 'package:realestate_ui/utils/colors.dart';
-import 'package:realestate_ui/views/bottom_nav_bar.dart';
+import 'package:realestate_ui/screens/home/home_screen.dart';
+import 'package:realestate_ui/screens/search/search_screen_view.dart';
+import 'package:realestate_ui/shared/bottom_nav_bar.dart';
+import 'package:realestate_ui/shared/utils/colors.dart';
 
 class HomeTabView extends StatefulWidget {
   const HomeTabView({super.key});

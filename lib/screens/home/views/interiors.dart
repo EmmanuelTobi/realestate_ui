@@ -1,7 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:realestate_ui/utils/colors.dart';
+import 'package:realestate_ui/shared/utils/colors.dart';
 
 class Interiors extends StatelessWidget {
   final String title;

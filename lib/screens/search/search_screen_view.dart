@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:realestate_ui/ui/search/views/bottom_options_view.dart';
-import 'package:realestate_ui/utils/colors.dart';
-import 'package:realestate_ui/utils/extensions.dart';
-import 'package:realestate_ui/views/map_pins_view.dart';
+import 'package:realestate_ui/screens/search/views/bottom_options_view.dart';
+import 'package:realestate_ui/shared/map_pins_view.dart';
+import 'package:realestate_ui/shared/utils/colors.dart';
+import 'package:realestate_ui/shared/utils/extensions.dart';
 
 class SearchScreen extends StatefulWidget {
   const SearchScreen({super.key});

@@ -1,13 +1,39 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-import 'package:realestate_ui/ui/home/views/buyandrent_view.dart';
-import 'package:realestate_ui/ui/home/views/home_top_bar.dart';
-import 'package:realestate_ui/ui/home/views/interiors.dart';
-import 'package:realestate_ui/utils/colors.dart';
-import 'package:realestate_ui/utils/extensions.dart';
+import 'package:realestate_ui/screens/home/views/buyandrent_view.dart';
+import 'package:realestate_ui/screens/home/views/home_top_bar.dart';
+import 'package:realestate_ui/screens/home/views/interiors.dart';
+import 'package:realestate_ui/shared/utils/colors.dart';
+import 'package:realestate_ui/shared/utils/extensions.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+
+  int updateStaggeredAnimDx = -10;
+  int updateStaggeredAnimDy = 240;
+
+  @override
+  void initState() {
+
+    Future.delayed(const Duration(seconds: 1), () {
+
+      setState(() {
+
+        updateStaggeredAnimDx = 0;
+        updateStaggeredAnimDy = 30;
+
+      });
+
+    });
+
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -67,9 +93,13 @@ class HomeScreen extends StatelessWidget {
                 ),
                 const BuyRentView(),
                 const SizedBox(
-                  height: 20,
+                  height: 10,
                 ),
-                Container(
+                AnimatedContainer(
+                  duration: const Duration(milliseconds: 550),
+                  transform: Transform.translate(
+                    offset: Offset(updateStaggeredAnimDx.toDouble(), updateStaggeredAnimDy.toDouble()), // Change -100 for the y offset
+                  ).transform,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
                     color: Colors.white,
