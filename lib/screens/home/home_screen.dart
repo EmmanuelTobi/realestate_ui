@@ -96,7 +96,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   height: 10,
                 ),
                 AnimatedContainer(
-                  duration: const Duration(milliseconds: 550),
+                  duration: const Duration(milliseconds: 1000),
                   transform: Transform.translate(
                     offset: Offset(updateStaggeredAnimDx.toDouble(), updateStaggeredAnimDy.toDouble()), // Change -100 for the y offset
                   ).transform,
